@@ -1,42 +1,117 @@
-# Dev Landing Page
+<h1 align="center">
+ 
+![mk-banner-git](https://user-images.githubusercontent.com/29413231/98022735-bd438580-1de4-11eb-84f4-c8d319da76bc.png)
 
-Minimal landing page for developers.
+</h1>
 
-Developers don't talk much. Their code does all the talking. So here's a minimal landing page for developers.
+ # MilkPoint | Mobile
+> Protótipo de um aplicativo móvel para o Programa de Aquisição de Alimento do Estado do Ceará – **PAA - Leite**.
 
-## Why? [![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat)](http://www.ted.com/talks/simon_sinek_how_great_leaders_inspire_action)
+<p align="center">
+<img alt="React native" src="https://img.shields.io/static/v1?label=react-native&message=framework&color=blue&style=for-the-badge&logo=REACT"/>
+ 
+<a href="https://github.com/Moizez/Milk-Point" alt="Activity">
+ <img src="http://img.shields.io/static/v1?label=COMMIT%20ACTIVITY&message=95/month&color=9cf&style=for-the-badge"/></a>
+<img src="http://img.shields.io/static/v1?label=STATUS&message=EM%20DESENVOLVIMENTO&color=yellow&style=for-the-badge"/>
+</p>
 
-I wanted a dev landing page to showcase everything I do online and I wanted it to be minimal and right to the point rather beautiful and hefty. And I think most of the devs out there would want the same.
+## Índice
+- [Apresentação](#Apresentação)
+- [Guia](#Guia)
+- [Demonstração](#Demonstração)
+- [Instalação](#Instalação)
+- [Tecnologias](#Tecnologias)
+- [Contato](#Contato)
 
-So I sat down one night and created this **Dev Landing Page**. Feel free to fork, clone, play around and make this your own.
+## Apresentação
+Este projeto foi realizado para obtenção do título de Analista de Sistemas à banca examinadora do Curso de Análise e Desenvolvimento de Sistemas, do Instituto Federal de Educação, Ciência e Tecnologia do Rio Grande do Norte além de se tornar um projeto de extensão no mesmo instituto mencionado.
 
-## Themes
+## Guia
+Em caso de dúvidas consulte de como testar a aplicação, acesse este [guia de uso](https://moizez.github.io/milkpoint-app/).
 
-Dev Landing Page comes in 9 **material themes**.
+## Demonstração
 
-![9 Material Themes](https://image.ibb.co/jJVKCn/dev_landing_page_themes.jpg)
+#### Tela de Login e Logout
+<p>
+ <img src="https://i.ibb.co/znmYVJr/1-Tela-de-login.jpg" width="250" height="445" alt="1 - Tela de login" border="0">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://i.ibb.co/YNHD291/2-Tela-de-logout.jpg" width="250" height="445" alt="2 - Tela de logout" border="0">
+</p>
 
-If none of these themes fit within your taste, it's quite easy to customize and create your own too. 
+#### Tela de Inicial do Produtor e Laticínio
+<p>
+ <img src="https://i.ibb.co/3TbpjnR/3-Tela-inicial-produtor.jpg" width="250" height="445" alt="3 - Tela inicial produtor" border="0">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <img src="https://i.ibb.co/vdqw7m6/4-Tela-inicial-do-latic-nio.jpg" width="250" height="445" alt="4 - Tela inicial do laticínio" border="0">
+</p>
 
-## GitHub Pages
+#### Tela de Inicial do Responsável e Técnico
+<p>
+ <img src="https://i.ibb.co/F3L4Nwt/5-Tela-inicial-do-respons-vel.jpg" width="250" height="445" alt="5 - Tela inicial do responsável" border="0">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+ <img src="https://i.ibb.co/y8wQhnK/6-Tela-inicial-do-t-cnico.jpg" width="250" height="445" alt="6 - Tela inicial do técnico" border="0">
+</p>
 
-GitHub makes it easy to create personal websites. Follow this link - [GitHub Pages](https://pages.github.com/) to know how or follow the steps below.
+## Instalação
+```bash
+  # Tendo em mente que você já tem instalado o NPM e o Yarn, primeiro faça o clone ou faça o download deste repositório:
+  $ git clone https://github.com/Moizez/Milk-Point.git
 
-If you already have a GitHub profile (obviously)
+  # Em seguida abra o terminal na pasta do projeto e execute o comando abaixo para instalar as dependências.
+  $ npm install ou yarn
 
-* Create a new repo with the name `{username}.github.io`
-* Clone/Fork this repo and copy the files to your newly created repo
-* Customize your name, links and everything else for your landing page
-* `git push`
+   # Dê um link completo pra que os icons fiquem visíveis no projeto.
+   $ react-native link
 
-Voila! Your site should be live at `https://{username}.github.io`
+  # Execute no dispositivo movel
+  $ npx react-native run-android
 
-Here's my **Dev Landing Page** - [Dinesh Pandiyan - portfolio v1](https://portfoliov1.dineshpandiyan.com)
+```
+Obs: Em caso de dúvidas consulte a documentação oficial do [react native](https://reactnative.dev/docs/0.60/getting-started).
 
-### Custom Domain
+#### Passo Adicional no Android
 
-If you want to make your new landing page available under a domain like `{username}.com` you can get started here - [Setting up a custom domain](https://help.github.com/articles/quick-start-setting-up-a-custom-domain/).
+Para que os gestos sejam habilitados no Android é necessário um passo a mais, que é bem simples, abra o arquivo `android/app/src/main/java/<pacote_do_projeto>/MainActivity.java`, e começe importando os pacotes como abaixo:
 
-## License
+```java
+// ...
+import com.facebook.react.ReactActivity;
+// Importações adicionadas
+import com.facebook.react.ReactActivityDelegate;
+import com.facebook.react.ReactRootView;
+import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+```
 
-MIT © Dinesh Pandiyan
+Feito a importação vamos criar um método novo, logo abaixo do `getMainComponentName()`, ficando:
+
+```java
+public class MainActivity extends ReactActivity {
+  @Override
+  protected String getMainComponentName() { ... }
+  // Método adicionado
+  @Override
+  protected ReactActivityDelegate createReactActivityDelegate() {
+    return new ReactActivityDelegate(this, getMainComponentName()) {
+      @Override
+      protected ReactRootView createRootView() {
+        return new RNGestureHandlerEnabledRootView(MainActivity.this);
+      }
+    };
+  }
+}
+  
+```
+## Tecnologias
+|Tecnologias | Versão |
+|------------|--------|
+|react        |**16.13.1** |
+|react-native |**0.63.2** |
+|react-native-gesture-handler |**^1.8.0** |
+|reactotron-react-native     |**^5.0.0** |
+|styled-components     |**^5.1.1** |
+
+## Contato
+Moisés Henrique | Analista de Sistemas
+- E-mail: moizezhenrique@gmail.com
+- Twitter: [@moizezhenrique](https://twitter.com/moizezhenrique)
+- Instagram: [@moizezhenrique](https://www.instagram.com/moizezhenrique)
